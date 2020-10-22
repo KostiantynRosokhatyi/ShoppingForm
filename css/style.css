@@ -1,59 +1,306 @@
-
-/*nav {
-    width: 800px;
-    margin: 0 auto;
-}
-
-!*Menu*!
-ul.tabs {
-    float: left;
-    clear: both;
-    width: 800px;
-    list-style: none;
-    border-bottom: 2px solid #00aeef;
-    position: relative;
-    font-size: 1.061em;
-    padding: 0;
-}
-ul.tabs li {
-    float: left;
-}
-ul.tabs li a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    color: #666;
-    padding: 12px 20px;
-    min-width: 85px;
-    font-weight: normal;
-    transition: color 0.3s;
-}
-ul.tabs li.active a {
-    color: #00aeef;
-}
-
-#magic-line {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 125px;
-    height: 4px;
-    background: #00aeef;
-    transition: all 0.3s;
-}
-!*Clear Fix*!
-.tabs:after {
-    visibility: hidden;
-    display: block;
-    content: "";
-    clear: both;
-    height: 0;
-}*/
-input{
-    width: 290px;
-    margin-bottom: 90px;
-
+.dop{
+    padding-top: 25px;
 }
 .r{
-    width: 1200px;
+    width: 100%;
+}
+html { overflow-x: hidden; }
+select{
+    appearance: none;
+}
+.invalid{
+    border: 1px solid red;
+}
+.valid{
+   border: 1px solid green;
+}
+.test{
+    background: linear-gradient(to right, #1b2125 30%, #d4d9dd 20%, #d4d9dd 80%, #d4d9dd 80%);
+}
+hr{
+    border: none; /* Убираем границу */
+    height: 1px; /* Толщина линии */
+    width: 100%;
+
+}
+.test2{
+    background: linear-gradient(to right,  #d4d9dd 30%,#1b2125 30% 60%, #d4d9dd 40%);
+}
+.test3{
+    background: linear-gradient(to right,  #d4d9dd 55%, #d4d9dd 40%,#1b2125 30% 100%);
+}
+.span-title{
+    color: #d4d9dd;
+    font-family: "Arial Bold", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.span-title_selected{
+    color: #3a3f42;
+}
+input,select{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 2px solid #d4d9dd;
+    padding: 0 0 0 20px;
+    font-family:"Arial", sans-serif;
+    font-size: 14px;
+}
+input::placeholder{
+    color: #788995;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+}
+option:first-child, select{
+    color: #788995;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+}
+
+/*option{
+    color: #788995;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+}*/
+
+select option:first-child{
+    color: #788995;
+}
+.input-postal-code::placeholder{
+    color: #788995;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+}
+input:focus, select:focus {
+    outline: none !important;
+    border-color: #0095f8;
+
+}
+input.text:active {
+    border: #0095f8;
+}
+.input-postal-code-find::placeholder{
+    color: #0095f8;
+    font-size: 14px;
+    font-family: "Arial", sans-serif;
+}
+.input-postal-code-find{
+    cursor: pointer;
+}
+
+.input-postal-code{
+    width: 80%;
+}
+.input-postal-code-find{
+    width: 20%;
+    border-left: none;
+}
+.input-long{
+    width: 100%;
+    height: 50px;
+}
+.button{
+    width: 200px;
+    height: 40px;
+    border: 1px;
+    background: #0077e2;
+    color: #ffffff;
+    outline: none;
+    margin-bottom: 20px;
+}
+button:focus{
+    cursor: pointer;
+    border-color: #ffffff;
+}
+button:hover{
+    cursor: pointer;
+}
+.button-back:focus{
+    outline: none;
+    cursor: pointer;
+}
+
+.shopping_form label{
+    display: block;
+    color: #d4d9dd;
+    text-transform: uppercase;
+    font-family: "Arial Bold", sans-serif;
+    font-size: 14px;
+}
+.button-back{
+    background: none;
+    color: #7e8e99;
+    padding: 0;
+    margin-bottom: 0;
+    width: 110px;
+    width: 110px;
+}
+h3{
+    color: #1b2125;
+    font-family: "Arial", sans-serif;
+    font-size: 24px;
+    padding: 10px 0 5px 0;
+}
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+
+.address-box, .map-box{
+    border: 1px solid #d4d9dd;
+    width: 100%;
+    height: 220px;
+    margin: 30px 0;
+    padding: 30px;
+}
+.address-box, .map-box{
+    padding-top: 10px;
+}
+.map-box{
+    padding: 0;
+}
+.shipping-form2 p{
+    color: #5e666c;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+}
+
+.delivery-box{
+    width: 100%;
+    height: 180px;
+    border: 1px solid #d4d9dd;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.form-radio{
+    width: 25px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 20px 0 0;
+    vertical-align: center;
+
+}
+.delivery-box label{
+    vertical-align: center;
+    display: inline-block;
+    color: #212121;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+.delivery-box span{
+    color: #212121;
+    font-family: 'Arial Bold', sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-left: 140px;
+}
+.delivery-box p{
+    color: #9b9fa3;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    padding-left: 45px;
+}
+.delivery-box span:nth-child(2){
+    font-weight: normal;
+}
+.dop33{
+    padding-left: 8%;
+
+}
+.dop332{
+    padding-left: 8%;
+    padding-bottom: 10px;
+}
+.button_address{
+    color: #0095f8;
+    font-size: 14px;
+    font-family: "Arial Bold",sans-serif;
+    border: none;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+.address-box p{
+    tab-size: 12px;
+    margin: 5px 0;
+
+}
+.button_address_first{
+    padding-right: 35px;
+}
+.shipping-form2 .button-back{
+    width: 160px;
+}
+.shop2{
+    display: none;
+}
+.shop1{
+    display: block;
+}
+@media screen and (max-device-width: 480px){
+    #two,#three {
+        display: none;
+    }
+    .mobile-align{
+        text-align: center;
+    }
+    .dop33{
+        padding: 0;
+    }
+    .mobile-padding_button{
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+    }
+    button{
+        width: 100%;
+    }
+    .test,.test2,.test3{
+       background: #1b2125;
+    }
+    .button_address_first{
+        padding: 0;
+    }
+    .button_address{
+        display: inline-block;
+        width: 80px;
+
+    }
+    .delivery-box p {
+        font-size: 14px;
+        padding-left: 12%;
+    }
+    .delivery-box span{
+        font-size: 16px;
+        margin-left: 23%;
+    }
+    .form-radio{
+        width: 14px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .delivery-box{
+        height: 180px;
+        padding: 10px 0 10px 20px;
+    }
+    .address-box{
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+    .map-box{
+        margin-top: 0;
+    }
+    .shipping-form2 p{
+        font-size: 14px;
+    }
+    .delivery-box{
+        margin-bottom: 25px;
+    }
+    h3{
+        padding: 10px 0px;
+    }
 }
