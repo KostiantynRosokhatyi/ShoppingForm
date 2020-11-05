@@ -27,7 +27,7 @@ hr{
 .gradient_line_second_step{
     background: linear-gradient(to right,  #d4d9dd 30%,#1b2125 30% 60%, #d4d9dd 40%);
 }
-.test3{
+.gradient_line_third_step{
     background: linear-gradient(to right,  #d4d9dd 55%, #d4d9dd 40%,#1b2125 30% 100%);
 }
 .span-title{
@@ -251,7 +251,7 @@ h3{
     button{
         width: 100%;
     }
-    .gradient_line_first_step,.gradient_line_second_step,.test3{
+    .gradient_line_first_step,.gradient_line_second_step,.gradient_line_third_step{
        background: #1b2125;
     }
     .button_address_first{

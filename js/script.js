@@ -2,7 +2,7 @@
 function validate_button() {
     let first_name_input = document.getElementById('first_name').value;
     let phone_input = document.getElementById('phone').value;
-    let regex_first_name_string= /^[A-ZА-Я][a-zа-я]{2,}$/.test(first_name_input);
+    let regex_first_name_string= /^[A-ZА-ЯЁ][a-zа-яё]{2,}$/.test(first_name_input);
     if(!regex_first_name_string){
         document.getElementById('first_name').classList.add('invalid');
         alert('Please,write correct all red inputs');
@@ -23,7 +23,7 @@ function validate_button() {
             $('#shipping-info_line').addClass('span-title_selected');
             let w = $(window).width(); // Получаем ширину окна
             if (w <= 480) { // Если ширина окна меньше, либо равна 600
-                $('#one,#three').hide();
+                $('#customer-info_line,#payment-section_line').hide();
                 $('#shipping-info_line').show();
             }
         });
@@ -51,7 +51,7 @@ function input_validate(){
             let check;
             switch (rule) {
                 case 'first_name':
-                    check = /^[A-ZА-Я][a-zа-я]{2,}$/.test(value);
+                    check = /^[A-ZА-ЯЁ][a-zа-яё]{2,}$/.test(value);
                     break;
                 case 'number':
                     check = /^\+3 8\(0\d{2}\) \d{3}-\d{2}-\d{2}$/.test(value);
