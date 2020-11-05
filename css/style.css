@@ -1,19 +1,20 @@
-
+input{
+    outline: none;
+}
 .shopping_form .row{
     padding-top: 25px;
 }
-.r{
+#address{
     width: 100%;
 }
-html { overflow-x: hidden; }
+html {
+    overflow-x: hidden;
+}
 select{
     appearance: none;
 }
 .invalid{
     border: 1px solid red;
-}
-.valid{
-   border: 1px solid green;
 }
 .gradient_line_first_step{
     background: linear-gradient(to right, #1b2125 30%, #d4d9dd 20%, #d4d9dd 80%, #d4d9dd 80%);
@@ -22,7 +23,6 @@ hr{
     border: none; /* Убираем границу */
     height: 1px; /* Толщина линии */
     width: 100%;
-
 }
 .gradient_line_second_step{
     background: linear-gradient(to right,  #d4d9dd 30%,#1b2125 30% 60%, #d4d9dd 40%);
@@ -59,12 +59,6 @@ option:first-child, select{
     font-size: 14px;
 }
 
-/*option{
-    color: #788995;
-    font-family: "Arial", sans-serif;
-    font-size: 14px;
-}*/
-
 select option:first-child{
     color: #788995;
 }
@@ -76,7 +70,6 @@ select option:first-child{
 input:focus, select:focus {
     outline: none !important;
     border-color: #0095f8;
-
 }
 input.text:active {
     border: #0095f8;
@@ -89,7 +82,6 @@ input.text:active {
 .input-postal-code-find{
     cursor: pointer;
 }
-
 .input-postal-code{
     width: 80%;
 }
@@ -110,9 +102,10 @@ input.text:active {
     outline: none;
     margin-bottom: 20px;
 }
-button:focus{
+button:focus, button:active{
     cursor: pointer;
     border-color: #ffffff;
+    outline: none;
 }
 button:hover{
     cursor: pointer;
@@ -147,7 +140,6 @@ h3{
     height: 100%;
     width: 100%;
 }
-
 
 .address-box, .map-box{
     border: 1px solid #d4d9dd;
@@ -207,11 +199,10 @@ h3{
 .delivery-box span:nth-child(2){
     font-weight: normal;
 }
-.dop33{
+.shipping-form2 .shipping-form2 .row:first-child{
     padding-left: 8%;
-
 }
-.dop332{
+#shopping_form_first_step .row:first-child{
     padding-left: 8%;
     padding-bottom: 10px;
 }
@@ -236,7 +227,7 @@ h3{
 .shipping-form2 .button-back{
     width: 160px;
 }
-.shop2{
+#shipping_info_form{
     display: none;
 }
 .shop1{
@@ -249,7 +240,7 @@ h3{
     .mobile-align{
         text-align: center;
     }
-    .dop33{
+    .shipping-form2 .shipping-form2 .row:first-child{
         padding: 0;
     }
     .mobile-padding_button{
@@ -269,7 +260,6 @@ h3{
     .button_address{
         display: inline-block;
         width: 80px;
-
     }
     .delivery-box p {
         font-size: 14px;

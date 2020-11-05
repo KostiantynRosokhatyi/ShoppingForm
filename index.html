@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/04144f6060.js" crossorigin="anonymous"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
@@ -27,12 +27,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzrynGCRqr8cyrwql8CRiBMB1mUkHse10&callback=initMap&libraries=&v=weekly"
-            defer
-    ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzrynGCRqr8cyrwql8CRiBMB1mUkHse10&callback=initMap&libraries=&v=weekly" defer></script>
 </head>
 <body>
+
 <div class="shopping_form">
     <div class="container justify-content-around mobile-align">
         <div class="row justify-content-center">
@@ -44,15 +42,15 @@
             <div class="col-xl-10 col-12"><hr id="line" class="gradient_line_first_step"></div>
         </div>
     </div>
-    <div id="twot" class="shop1">
+    <div id="shopping_form_first_step" class="shop1">
         <div class="container">
-            <div class="row dop332">
+            <div class="row">
                 <div class="col-xl-10"><h3>Customer information</h3></div>
             </div>
             <div class="row justify-content-center ">
                 <div class="col-xl-5">
-                    <label for="first_name" required >First name</label>
-                    <input type="text" id="first_name" onkeyup="Opa()"data-rule="first_name">
+                    <label for="first_name">First name</label>
+                    <input  type="text" id="first_name" onkeyup="input_validate()"  data-rule="first_name">
                 </div>
                 <div class="col-xl-5">
                     <label for="second_name">first name</label>
@@ -62,7 +60,6 @@
                     <label for="address">address</label>
                     <input type="text" class="r" id="address">
                 </div>
-
                 <div class="col-xl-5 ">
                     <label for="country">Country</label>
                     <select id="country">
@@ -328,24 +325,25 @@
                 </div>
                 <div class="col-xl-5">
                     <label for="phone">phone</label>
-                    <input type="text" id="phone"  required  placeholder="+3 8(0__) ____-__-__" data-rule="number" >
+                    <input  type="text" id="phone" placeholder="+3 8(0__) ____-__-__" data-rule="number" onkeyup="input_validate()" >
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-xl-5 d-flex justify-content-start   order-xl-1 order-12">
+                <div class="col-xl-5 d-flex justify-content-start order-xl-1 order-12">
                     <button class="button button-back mobile-padding_button">Return to shop</button>
                 </div>
                 <div class="col-xl-5 d-flex justify-content-end pull-xs-5 order-xl-12 order-2">
-                    <button id="firstbt" type="submit" class="button mobile-padding_button" onclick=""  disabled>Continue to shipping</button>
+                    <button id="continue_to_shipping_btn" class="button mobile-padding_button" onclick="validate_button()">Continue to shipping</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="twor" class="shop2">
-    <div class="shipping-form2 ">
+
+<div id="shipping_info_form">
+    <div class="shipping-form2">
         <div class="container shipping-form2">
-            <div class="row dop33">
+            <div class="row">
                 <div class="col-xl-10"><h3>Shipping information</h3></div>
             </div>
             <div class="row no-gutters justify-content-center">
@@ -371,25 +369,29 @@
             <div class="row justify-content-center">
                 <div class="col-xl-5 col-12 pad">
                    <div class="delivery-box">
-                       <label for="radioButton" class="d-flex align-items-center"><input type="radio" name="radio" id="radioButton" class="form-radio" value="Standard Delivery" checked>Standard Delivery <span>Free</span></label>
+                       <label for="radioButton" class="d-flex align-items-center">
+                           <input type="radio" name="radio" id="radioButton" class="form-radio" value="Standard Delivery" checked>Standard Delivery
+                           <span>Free</span></label>
                        <p>Freebie checkout form of the third <br> step in sketchapp. Feel free to <br> download and use it for your
                            <br> project.</p>
                    </div>
                 </div>
                 <div class="col-xl-5 col-12">
                     <div class="delivery-box">
-                        <label for="radioButton2" class="d-flex align-items-center"><input type="radio" name="radio" id="radioButton2" class="form-radio" value="Standard Delivery">Fast Delivery <span>8.00 uah</span></label>
-                        <p>Freebie checkout form of the third <br> step in sketchapp. Feel free to <br> download and use it for your
+                        <label for="radioButton2" class="d-flex align-items-center">
+                            <input type="radio" name="radio" id="radioButton2" class="form-radio" value="Standard Delivery">Fast Delivery
+                            <span>8.00 uah</span></label>
+                            <p>Freebie checkout form of the third <br> step in sketchapp. Feel free to <br> download and use it for your
                             <br> project.</p>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-5 col-12 d-flex justify-content-start order-xl-3 order-9">
-                    <button  id="backbt" class="button button-back   mobile-padding_button" >Back to Customer info</button>
+                    <button  id="back_button" class="button button-back mobile-padding_button">Back to Customer info</button>
                 </div>
                 <div class="col-xl-5 xol-12 d-flex justify-content-end order-xl-8 order-4 ">
-                    <button  class="button  mobile-padding_button">Continue to payment</button>
+                    <button  class="button mobile-padding_button">Continue to payment</button>
                 </div>
             </div>
       </div>
