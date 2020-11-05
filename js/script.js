@@ -1,5 +1,51 @@
 
 
+function Opa(){
+    let inp = document.querySelectorAll('input[data-rule]');
+
+    var submitButton = document.getElementById('firstbt');
+    for(let input of inp){
+        input.addEventListener('blur', function (){
+            let rule = this.dataset.rule;
+            let value = this.value;
+            let check;
+            var val2 = document.getElementById('first_name').value;
+
+
+            switch (rule) {
+                case 'first_name':
+                    check = /^[A-ZА-Я][a-zа-я]{2,}$/.gradient_line_first_step(value);
+
+                    break;
+                case 'number':
+                    // check = /[_]/g.test(value);
+                    var val = document.getElementById('phone').value;
+
+                    if(val.includes('_')){
+                        check = false;
+                    } else{
+                        check=true;
+                    }
+                    break;
+            };
+            if(!check){
+                this.classList.add('invalid');
+
+                submitButton.disabled = true;
+            }else{
+                this.classList.remove('invalid');
+
+
+            };
+            if(!(document.querySelector("#first_name").classList.contains("invalid") || document.querySelector("#phone").classList.contains("invalid"))){
+                submitButton.disabled = false;
+            }
+            else if((document.querySelector("#first_name").classList.contains("invalid") || document.querySelector("#phone").classList.contains("invalid"))){
+                submitButton.disabled = true;
+            }
+        });
+    };
+}
 jQuery(function($){
     $('#phone').mask('+3 8(099) 999-99-99',{autoclear: false});
 });/*
@@ -49,26 +95,26 @@ $('#twor').hide();
 $('#firstbt').click(function(){
         $('#twor').show("slow");
         $('#twot').hide();
-        $('#one').removeClass('span-title_selected');
-        $('#line').addClass('test2');
-        $('#two').addClass('span-title_selected');
+        $('#customer-info_line').removeClass('span-title_selected');
+        $('#line').addClass('gradient_line_second_step');
+        $('#shipping-info_line').addClass('span-title_selected');
         let w = $(window).width(); // Получаем ширину окна
         if (w <= 480) { // Если ширина окна меньше, либо равна 600
             $('#one,#three').hide();
-            $('#two').show();
+            $('#shipping-info_line').show();
         }
     });
 $('#backbt').on('click', function() {
 // действия, которые будут выполнены при наступлении события...
     $('#twot').show("slow");
     $('#twor').hide();
-    $('#line').removeClass('test2');
-    $('#one').addClass('span-title_selected');
-    $('#two').removeClass('span-title_selected');
+    $('#line').removeClass('gradient_line_second_step');
+    $('#customer-info_line').addClass('span-title_selected');
+    $('#shipping-info_line').removeClass('span-title_selected');
     let w = $(window).width(); // Получаем ширину окна
     if (w <= 480) { // Если ширина окна меньше, либо равна 600
-        $('#two,#three').hide();
-        $('#one').show();
+        $('#shipping-info_line,#three').hide();
+        $('#customer-info_line').show();
     }
 
 });

@@ -12,7 +12,6 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-
     <script src="https://kit.fontawesome.com/04144f6060.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -20,8 +19,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-
     <script src="https://kit.fontawesome.com/04144f6060.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -36,16 +33,15 @@
     ></script>
 </head>
 <body>
-
 <div class="shopping_form">
     <div class="container justify-content-around mobile-align">
-        <div class="row  justify-content-center dop">
-                <div class="col-xl-3 justify-content-between"><span id="one" class="span-title span-title_selected">01 Customer info</span></div>
-                <div class="col-xl-3 justify-content-between"><span id="two" class="span-title">02 Shipping info</span></div>
-               <div class="col-xl-3 justify-content-between"><span id="three" class="span-title">03 Payment selection</span></div>
+        <div class="row justify-content-center">
+                <div class="col-xl-3 justify-content-between"><span id="customer-info_line" class="span-title span-title_selected">01 Customer info</span></div>
+                <div class="col-xl-3 justify-content-between"><span id="shipping-info_line" class="span-title">02 Shipping info</span></div>
+               <div class="col-xl-3 justify-content-between"><span id="payment-section_line" class="span-title">03 Payment selection</span></div>
         </div>
-        <div class="row justify-content-center ">
-            <div class="col-xl-10 col-12"><hr id="line" class="test"></div>
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-12"><hr id="line" class="gradient_line_first_step"></div>
         </div>
     </div>
     <div id="twot" class="shop1">
@@ -335,10 +331,6 @@
                     <input type="text" id="phone"  required  placeholder="+3 8(0__) ____-__-__" data-rule="number" >
                 </div>
             </div>
-
-
-
-
             <div class="row justify-content-center">
                 <div class="col-xl-5 d-flex justify-content-start   order-xl-1 order-12">
                     <button class="button button-back mobile-padding_button">Return to shop</button>
@@ -359,13 +351,11 @@
             <div class="row no-gutters justify-content-center">
                 <div class="col-xl-5 col-12">
                     <div class="address-box">
-
                         <p>Taras Shevchenko</p>
                         <p>Unit 2 Green Mount Park</p>
                         <p>Halifax</p>
                         <p>HX1 5QN</p>
                         <p>Phone: +3 8097 132-45-67</p>
-
                         <button class="button_address button_address_first">Edit Address</button>
                         <button class="button_address">Add New</button>
                     </div>
@@ -405,57 +395,6 @@
       </div>
   </div>
 </div>
-
-<script>
-function Opa(){
-    let inp = document.querySelectorAll('input[data-rule]');
-
-    var submitButton = document.getElementById('firstbt');
-    for(let input of inp){
-        input.addEventListener('blur', function (){
-            let rule = this.dataset.rule;
-            let value = this.value;
-            let check;
-            var val2 = document.getElementById('first_name').value;
-
-
-            switch (rule) {
-                case 'first_name':
-                    check = /^[A-ZА-Я][a-zа-я]{2,}$/.test(value);
-
-                    break;
-                case 'number':
-                    // check = /[_]/g.test(value);
-                    var val = document.getElementById('phone').value;
-
-                    if(val.includes('_')){
-                        check = false;
-                    } else{
-                        check=true;
-                    }
-                    break;
-            };
-            if(!check){
-                this.classList.add('invalid');
-
-                submitButton.disabled = true;
-            }else{
-                this.classList.remove('invalid');
-
-
-            };
-            if(!(document.querySelector("#first_name").classList.contains("invalid") || document.querySelector("#phone").classList.contains("invalid"))){
-                submitButton.disabled = false;
-            }
-            else if((document.querySelector("#first_name").classList.contains("invalid") || document.querySelector("#phone").classList.contains("invalid"))){
-                submitButton.disabled = true;
-            }
-        });
-    };
-}
-
-
-</script>
 
 <script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>
